@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Enter a number between 1 and 7 : " num;
+read -p "Enter a number between 0 and 8 : " num;
 if [ $num -eq 1 ]
 then
   echo "Sunday";
