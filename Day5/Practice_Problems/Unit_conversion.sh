@@ -6,5 +6,6 @@ echo "Length of plot is 60 ft ";
 echo "Breadth of plot is 40 ft";
 Length=$60;
 Breadth=$40;
+Area=$(($Length*$Breadth));
 echo "Length of plot in meters is:" $Length*0.3048
 echo "Breadth of plot in meters is" $breadth*0.3048
