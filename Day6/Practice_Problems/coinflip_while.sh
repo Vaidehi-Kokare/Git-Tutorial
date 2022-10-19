@@ -1,29 +1,30 @@
 #!/bin/bash
 
-count=0;
+count_h=0;
+count_t=0;
 head=0;
 win=11;
-tail=0;
-while [ $head -lt 11 ] || [ $tail -]
+tail=1;
+while [ $count_h -lt 11 ] || [ $count_t -lt 11 ]
 do
   echo "Please flip the coin";
   coin=$((RANDOM%2));
-  if [ $coin -et $head ]
+  if [ $coin -eq $head ]
   then
-    head=$(($head + $count));
     #echo "$head";
-    ((count++));
-    if [$head -et $win ]
+    ((count_h++));
+    if [ $count_h -eq $win ]
     then
       echo "Heads wins!!";
+      exit 0 ;
     fi
   else
-    tail=$(($tail + $count));
-    ((count++));
+    ((count_t++));
     #echo "$tail"
-    if [ $tail -et $win ]
+    if [ $count_t -eq $win ]
     then
       echo "Tails Wins!!"
+      exit 0 ;
     fi
   fi
 done
