@@ -1,11 +1,10 @@
 #!/bin/bash
 
 read -p "Enter number: " num;
-for ((i=2;i<=$num;i++));
+for ((i=2;i<=$num;i++))
 do
-  while [ $(($num/$i)) == 0 ];
-  do
+  if [ $(($num % $i)) -eq 0 ]
+  then
     echo $i;
-    num=$(($num/$i));
-  done
+  fi
 done

@@ -1,20 +1,20 @@
 #!/bin/bash
 read -p "Enter Lower Limit :" Lower;
-if [[ $Lower -le 2 ]]
+if [ $Lower -le 2 ]
  then
    read -p "Enter Lower Limit :" Lower;
 fi
 read -p "Enter Upper Limit :" Upper;
-for ((i=$Lower; i<=$Upper; i++))
+for ((i=$Lower; i<$Upper; i++))
 do
-  for((j=$Lower; i<=$Lower/2; j++))
+  for ((j=2; j<$Lower/2; j++))
   do
-    k=$(( num%i ));
+    k=$(( Lower%j ));
     if [ $k -eq 0 ]
     then
       echo "$Lower is not a prime number.";
-      exit 0
+      exit 0 ;
     fi
   done
-  echo "$Lower is a prime number.";
 done
+echo "$Lower is a prime number.";
